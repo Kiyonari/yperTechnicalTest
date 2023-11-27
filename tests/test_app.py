@@ -107,3 +107,17 @@ def test_compute_delivery_cost():
     distance = 4366
     price = compute_delivery_cost(distance)
     assert price['total_ht'] == 7
+
+    distance = 405
+    price = compute_delivery_cost(distance)
+    assert price['total_ht'] == 3
+
+    distance = 2568
+    price = compute_delivery_cost(distance)
+    assert price['total_ht'] == 5.4
+
+    distance = 16_235
+    price = compute_delivery_cost(distance)
+    assert price['total_ht'] == 16.2
+    assert price['total_ttc'] == 19.44
+    assert price['tva'] == 3.24
