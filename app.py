@@ -165,9 +165,9 @@ def compute_delivery_cost(distance: int) -> dict:
     total_excluding_tax = base_price + additional_cost
     tax = 0.2 * total_excluding_tax
     price = {
-        'total_ht': total_excluding_tax,
-        'tva': tax,
-        'total_ttc': total_excluding_tax + tax,
+        'total_ht': round(total_excluding_tax, 2),
+        'tva': round(tax, 2),
+        'total_ttc': round(total_excluding_tax + tax, 2),
     }
     return price
 
